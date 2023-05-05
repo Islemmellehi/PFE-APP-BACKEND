@@ -1,6 +1,9 @@
 package Demo.MainDemo.Controllers;
+import Demo.MainDemo.Models.Reservation;
 import Demo.MainDemo.Repositories.Pensionrepos;
 import Demo.MainDemo.Repositories.Reservationrepos;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,5 +24,7 @@ public class ReservationController {
         List<Map<String, Object>> reservations = jdbcTemplate.queryForList("SELECT * FROM RESERVATION");
         return reservations;
     }
+
+
 
 }

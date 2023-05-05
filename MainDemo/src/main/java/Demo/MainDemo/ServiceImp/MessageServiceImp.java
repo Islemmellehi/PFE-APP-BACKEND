@@ -13,9 +13,17 @@ import java.util.List;
 @Transactional
 public class MessageServiceImp implements MessageService {
     @Autowired
-
     private Messagerepos Crepository;
     public List<Message> listAllMessages(){
         return Crepository.findAll();
+    }
+
+    public Message createMessage(Message message){
+
+        return Crepository.save(message);
+    }
+    @Override
+    public void deleteMessage(String id) {
+        Crepository.deleteById(id);
     }
 }

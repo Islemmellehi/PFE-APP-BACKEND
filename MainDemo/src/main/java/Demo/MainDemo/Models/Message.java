@@ -1,5 +1,7 @@
 package Demo.MainDemo.Models;
 import javax.persistence.*;
+
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,21 +9,21 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+@Data
 @Table(name = "message")
 @NoArgsConstructor
 
 public class Message {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Integer codMessage;
-
-    @Column(nullable = false)
+    @Column
     private String sender;
-    @Column(nullable = false)
+    @Column
     private String content;
+
+    @Column
+    @Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private String cod_message;
 
 
 
